@@ -1,0 +1,251 @@
+#content{
+    width:1200px;
+    margin:0 auto;
+    .shopBox{
+        width:1200px;
+        height:20px;
+        margin-top:40px;
+        .shopPosition{
+            width:1200px;
+            height:40px;
+//          background: red;
+            .left{
+                width:108px;
+                height:40px;
+                color: #E0E0E1;
+                float:left;
+                font-size:12px;
+                span{
+                    color: black;
+                }
+            }
+            .right{
+                color:#E0E0E1;
+                font-size: 12px;
+                width:140px;
+                height:40px;
+                float:right;
+            }
+        }
+        .typearea{
+            width:1200px;
+            height:35px;
+            border:1px solid #E0E0E1;
+            border-bottom: 1px dashed  #E0E0E1;
+            .xiebao{
+                width:66px;
+                height:35px;
+                border-right:1px solid black;
+                text-align: center;
+                line-height:35px;
+                font-size:13px;
+                float:left;
+                margin-bottom: 30px;
+            }
+            .fushi{
+                width:66px;
+                height:35px;
+                border-right:1px solid black;
+                text-align: center;
+                line-height:35px;
+                font-size:13px;
+                float:left;
+            }
+        }
+        .showImg1{
+            width:1200px;
+            height:1000px;
+            ul{
+                width:1200px;
+                height:1000px;
+                list-style: none;
+                li{
+                    width:230px;
+                    height:320px;                
+                    float:left;
+                    margin-right: 10px;
+                    margin-top:10px;
+                    position:relative;
+                    p{
+                        margin-top: 10px;
+                        padding: 0px 3px 5px;
+                        line-height: 20px;
+                        text-align: center;
+                        font-size: 13px;
+                        font-family: "Microsoft YaHei";
+                        height: 38px;
+                        overflow: hidden; 
+                        span{
+                            padding: 0px 3px 5px;
+                            line-height: 20px;
+                            text-align: center;
+                            font-size: 13px;
+                            font-family: "Microsoft YaHei";
+                            color:#b81c22;
+                        }                       
+                    }
+                    .tehui{
+                        background: url(http://i2.vanclimg.com/cms/20150228/vanclsprite.png) no-repeat 0px -841px transparent;
+                        bottom: 0;
+                        color: #FFFFFF;
+                        font-family: "arial";
+                        font-size: 16px;
+                        height: 25px;
+                        padding: 18px 0 2px 6px;
+                        position: absolute;
+                        right: 5px;
+                        bottom:100px;
+                        text-align: center;
+                        width: 40px;
+                        text-indent: -5px;
+                    }
+                    .buy{
+                        display: block;
+                        width:230px;
+                        height:24px;
+                        background: red;
+                        border-radius: 15px;
+                        text-align: center;
+                        font-size:15px;
+                        font-weight: bold;
+                        color:blue;
+                        cursor: pointer;
+                    }
+                    .buy:hover{
+                        font-size: 20px;
+                        text-align: center;
+                        line-height: 24px;
+                    }
+                    img{
+                        width:230px;
+                        height:230px;
+                        border: 1px solid #E0E0E1;
+                    }
+                    img:hover{
+                        border:1px solid red;
+                    }
+                    .hoverImg{
+                        position:absolute;
+                        right:-282px;
+                        top:0px;
+                        z-index: 10;
+                        display: none;
+                        img{
+                            border:0px;
+                            width:280px;
+                            height:410px;
+                        }
+                    }
+                }
+                .liLast1{
+                    margin-right:0;
+                }
+            }
+        }
+        .showImg2{
+            width:1200px;
+            height:50px;
+            margin-top:15px;
+        } 
+    }
+}
+
+
+
+//服务热线
+#serve{
+    overflow: hidden;
+    width: 1118px;
+    height: 282px;
+    margin: 0px auto;
+    padding: 0px 40px 0px;
+    border: 1px solid #e0e0e1;
+    font-family: "Microsoft YaHei";
+    margin-bottom: 25px;
+    #serve1{
+        margin: 33px 0px 23px;
+        ul{
+            height:138px;
+            li{
+                float:left;
+                width: 370px;
+                height: 138px;
+                border-right: 1px solid #e0e0e1;
+                margin-right: 0px;
+                p{
+                    text-align: center;
+                    font-size: 14px;
+                    color: #727171;
+                    line-height: 36px;
+                }
+                .serveTime{
+                    margin:30px auto;
+                    width: 156px;
+                    height: 32px;
+                    text-align: center;
+                    line-height: 32px;
+                    font-size: 14px;
+                    background: #b81c22;
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+    #guide{
+        height: 26px;
+        width:1200px;
+        padding: 17px 0px 14px;
+        background: #f8f8f8;
+        width: 100%;
+        margin: 0; 
+        li{
+            padding: 0px 65px;
+            line-height: 26px;
+            border-right: 1px solid #dadadb;
+            width: auto;
+            text-align: center;
+            margin-right: 0px;
+            float: left;
+        }       
+    }
+}
+
+//尾部连接
+#footerArea .footBottom{
+    width: 100%;
+    height: auto;
+    margin: 0px auto;
+    border-top: 1px solid #3e3a39;
+    .footBottomTab{
+        width: 1200px;
+        height: auto;
+        margin: 10px auto;
+        p{
+            text-align: center;
+            line-height: 25px;
+            color: #3e3a39;
+            font-family: "Microsoft YaHei";
+        }
+    }
+    .blank20{
+        display: block;
+        width: 100%;
+        height: 40px;
+        line-height: 0px;
+        font-size: 0px;
+        clear: both;
+        overflow: hidden;
+    }
+}
+
+//固定栏
+#fixed{
+    width: 73px;
+    height: 205px;
+    border: 1px solid #b81b22;
+    border-bottom: none;
+    margin-bottom: 30px;
+    position: fixed;
+    right:10px;
+    bottom:40px;
+}

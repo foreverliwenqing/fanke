@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			ul{
+				list-style: none;
+			}
+			.title{
+				width: 800px;
+				margin: 20px auto;
+				font-size: 20px;
+				font-weight: bold;
+			}
+			.title:after{
+				content: " ";
+				display: block;
+				clear: both;
+			}
+			.title li{
+				width: 130px;
+				line-height: 30px;
+				float: left;
+				text-align: center;
+				border-right: 2px solid #AABBCC;
+			}
+			.title li:last-child{
+				border-right: none;
+			}
+			.line{
+				width: 800px;
+				margin: 20px auto;
+			}
+			.carts{
+				width: 800px;
+				margin: 20px auto;
+				border: 3px solid #CCCCCC;
+			}
+			.carts .title{
+				height: 120px;
+			}
+			.carts .title li{
+				height: 120px;
+				line-height: 120px;
+				border-bottom: 2px dotted #CCCCCC;
+				border-top: 2px dotted #CCCCCC;
+				margin-bottom: 5px;
+			}
+			.carts .title li img{
+				height: 100px;
+			}
+			.carts .title li p{
+				padding: 5px 0;
+			}
+			.carts .title li input[type=button]{
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+			}
+			#footer li{
+				width: 180px;
+			}
+			/*img{
+				width:50px;
+				height:50px;
+			}*/
+		</style>
+	</head>
+	<body>
+		<div><a href="showBigImg.html">返回商品页</a></div>
+		<ul class="title">
+			<li><input id="selectAll" type="checkbox"/>&emsp;全选</li>
+			<li>商品</li>
+			<li>数量</li>
+			<li>单价</li>
+			<li>操作</li>
+			<li>总价</li>
+		</ul>
+		<div class="line"><hr /></div>
+		<div class="carts">
+			<!--<ul class = title>
+				
+					<li><input type="checkbox"/></li>
+					<li><p><img src="imgQt/${res[i].src}"/></p></li>
+					<li><span>${this.cartGoodsInfo[j].count}</span></li>
+					<li><span>${res[i].price}</span></li>
+					<li><input type="button" value="-"/>&nbsp;|&nbsp;<input type="button" value="+"/></li>
+					<li><span>${Number(this.cartGoodsInfo[j].count)*Number(res[i].price)}</span></li>
+				
+			</ul>-->
+		</div>
+		<div class="line"><hr /></div>
+		
+		<ul id="footer" class="title">
+			<li><input id="deslection" type="checkbox" class = 'delete'/>&emsp;取消选择</li>
+			<li>商品总数：<span id="totalCount">0</span></li>
+			<li>需付金额：<span id="totalPrice">0</span></li>
+			<li><input type="button" value="删除所选商品" class = 'deleteBtn'/></li>
+		</ul>
+	</body>
+</html>
+
+<script src="js/jquery.min.js"></script>
+
+<script type="text/javascript">	
+	//显示商品信息的条件
+	//从localstorage.getItem(键名),
+	//哪个用户登录就拿那个用户的购物车信息。
+	//得到当前登录用户的用户名，
+	//bid count 
+	//去数据库里和所有商品的信息
+	//goods.json
+	
+//	var phone = location.search.split('=')[1];
+	
+	window.onload = function(){
+		var obj = {
+			phone : location.search.split("=")[1],
+			carts : $(".carts"),
+			
+			checkAll : $('#checkAll'),
+			deslectionBtn : $("#deslection")//取消选择按钮
+		}
+		new ShowCartGoodsInfo(obj)
+	}
+	
+	
+	
+	class ShowCartGoodsInfo{
+		
+		constructor(obj){
+			
+			this.phone = obj.phone;
+			this.carts = obj.carts;
+			this.getCartGoods();//获取购物车保存的商品信息
+			this.getGoods();//获取所有商品信息
+			this.checkAll = obj.checkAll;
+			this.deslectionBtn = obj.deslectionBtn;//取消选择按钮
+		};
+		getCartGoods(){
+			
+			if(localStorage.getItem(this.phone + 'Goods')){
+				
+				var cartGoods = localStorage.getItem(this.phone + 'Goods');
+				
+				var cartGoodsArr = JSON.parse(cartGoods);
+				this.cartGoodsInfo = cartGoodsArr;
+				
+			}
+		};
+		//商品的信息
+		getGoods(){
+			var _this = this;
+			
+			//$.getJSON中穿入值是引入对象，res是对象的数据。
+			
+			//$getJSON是属于一个异步操作。
+			$.getJSON("goods.json",function(res){
+				_this.goods = res;
+				//把商品拿到后，开始来和购物车保存信息比较，
+				//通过购物车的bid与商品中的bid比较
+				//把对应的商品信息显示在页面。
+				_this.showCartGoodsInfo(res);
+			});
+		};
+		showCartGoodsInfo(res){
+			if(this.cartGoodsInfo){
+				//购物车商品存在。	
+				var str = '';			
+				for(var i = 0; i < res.length; i++){
+					//先遍历传过来的值
+					for(var j = 0; j < this.cartGoodsInfo.length; j++){
+						//在遍历json中保存的值。
+						if(res[i].bid == this.cartGoodsInfo[j].bid){
+							str += `
+								<ul class = 'title'>
+									<li><input type="checkbox" class="checkOne"/></li>
+									<li><p><img src="imgQt/${res[i].src}"/></p></li>
+									<li><span class = 'goodCount'>${this.cartGoodsInfo[j].count}</span></li>
+									<li><span class = 'goodPrice'>${res[i].price}</span></li>
+									<li><input type="button" value="-" class = 'del'/>&nbsp;|&nbsp;<input type="button" value="+" class = 'add'/></li>
+									<li><span class = 'goodTotalPrice'>${Number(this.cartGoodsInfo[j].count)*Number(res[i].price)}</span></li>
+								</ul>
+							`;
+						}
+					}
+				}
+				//把获取到的添加到页面中
+				this.carts.html(str);
+			}
+
+			//实现购物车的增删改
+			new SelectCart(this);
+		}
+	}
+	
+	
+	
+	//创建SelectCart类，用于实现购物车的增删改功能。
+	
+	class SelectCart{
+		
+		constructor(obj){
+			
+			this.goods = obj.goods; //所有商品
+			
+			this.phone = obj.phone;
+			
+			this.carts = obj.carts;
+			this.checkAll = obj.checkAll;
+			this.deslectionBtn = obj.deslectionBtn;//取消选择按钮
+			this.selectAll();	//实现选择所有功能
+			//创建对象，实现购物车计算功能
+//			this.ComputeCart = new ComputeCart(this.userName,this.goods);
+				
+		};
+		
+		//选择所有。
+		selectAll(){
+			
+			//选择所有大的表示商品的复选框
+			var checkOne = this.carts.find('.checkOne');
+			//保存当前对象
+			var _this = this;
+			this.checkAll.click(function(){
+				alert(1);
+				checkOne.prop('checked',$(this).prop('checked'));
+				//全部选中后，此时的全选按钮应为禁用状态.
+				$(this).prop('disabled',true);
+				
+				_this.deslectionBtn.prop("checked",false).prop("disabled",false);
+				
+				
+			})
+			
+		}
+		
+	}
+	
+	
+</script>
+<!--<script src = 'js/shopCart.js'></script>-->

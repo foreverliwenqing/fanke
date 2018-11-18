@@ -1,0 +1,251 @@
+
+
+//层级连接
+#content{
+    width:1200px;
+    margin:0 auto;
+    .connect{
+        width:1200px;
+        height:40px;
+        font-size:13px;
+    }
+    .showTitle{
+        font-size:18px;
+        color: black;
+        font-weight: bold;
+        p{
+            display: inline-block;  
+            float:right;            
+        }
+        span{
+            display: block;
+            margin-top:20px;    
+            width:1200px;
+            height:50px;
+            border-top:1px solid #E0E0E1;
+        }
+    }
+    
+    //放大镜展示图片
+    .imgShow{
+        width:634px;
+        height:426px;
+        position: relative;
+        float:left;
+        .liImg{
+            display: inline;
+            float: left;
+            width: 72px;
+            ul{
+                height: 415px;
+                overflow: hidden;
+                li{
+                    margin-top: 11px;
+//                  border: 1px solid #B4B4B4;
+                    width: 70px;
+                    height: 70px;
+                    overflow: hidden;
+                    img{
+                        width:70px;
+                        height:70px;
+                    }
+                }
+            }
+        }
+        .smallImg{
+            width: 400px;
+            height:400px;
+            float: right;
+            display: inline;
+            margin: 0 10px;
+            border: 1px solid #e5e6e6;
+            position:relative;
+            .mask{
+                display: none;
+                cursor: move;
+                width:180px;
+                height:180px;
+                background: #EEEEEE;
+                opacity: 0.6;
+                position:absolute;
+                left:0;
+                top:0;
+            }
+        }
+        .bigImg{
+            display: none;
+            width:450px;
+            height:450px;
+            position: absolute;
+            right:-500px;
+            top:0;
+            overflow: hidden;
+            border:1px solid black;
+            
+            .bigImgShow{
+                position:absolute;
+                left:0;
+                top:0;
+            }
+        }
+    }
+    
+    
+    //价格和服装样式
+    .price{
+        width:560px;
+        height:600px;
+        float:right;
+        .congzhi{
+            width:560px;
+            height: 26px;             
+            float:left;
+            display: inline-block; 
+            margin-left: 20px; 
+            line-height: 26px; 
+            margin-top: 7px;
+            margin-bottom: 20px;
+            font-size:16px;
+            color: #a10000;
+            span{
+                font-size:30px;
+            }
+        }
+        .priceImg{
+            width:350px;
+            height:150px;
+            margin: 20px 18px 20px;          
+        }
+        .shopNum{
+            font-size:16px;
+            color:#959595;
+            margin-left:22px;
+            select{
+                width:58px;
+                height:23px;
+            }
+            span{
+                color:red; 
+                font-size:13px;               
+            }
+        }
+        .buy{
+            width:390px;
+            margin-top:10px;
+            span{
+                display: block;
+                margin-left:24px;
+                float:left;
+                width:168px;
+                height:33px;
+                background: pink;
+                text-align: center;
+                line-height: 33px;
+                font-size:15px;
+                font-weight: bold;
+            }
+            .shopCart{
+                background: #C1383E;
+            }
+        }
+    }
+    
+}
+
+//服务热线
+#serve{
+    overflow: hidden;
+    width: 1118px;
+    height: 282px;
+    margin: 0px auto;
+    padding: 0px 40px 0px;
+    border: 1px solid #e0e0e1;
+    font-family: "Microsoft YaHei";
+    margin-bottom: 25px;
+    #serve1{
+        margin: 33px 0px 23px;
+        ul{
+            height:138px;
+            li{
+                float:left;
+                width: 370px;
+                height: 138px;
+                border-right: 1px solid #e0e0e1;
+                margin-right: 0px;
+                p{
+                    text-align: center;
+                    font-size: 14px;
+                    color: #727171;
+                    line-height: 36px;
+                }
+                .serveTime{
+                    margin:30px auto;
+                    width: 156px;
+                    height: 32px;
+                    text-align: center;
+                    line-height: 32px;
+                    font-size: 14px;
+                    background: #b81c22;
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+    #guide{
+        height: 26px;
+        width:1200px;
+        padding: 17px 0px 14px;
+        background: #f8f8f8;
+        width: 100%;
+        margin: 0; 
+        li{
+            padding: 0px 65px;
+            line-height: 26px;
+            border-right: 1px solid #dadadb;
+            width: auto;
+            text-align: center;
+            margin-right: 0px;
+            float: left;
+        }       
+    }
+}
+
+//尾部连接
+#footerArea .footBottom{
+    width: 100%;
+    height: auto;
+    margin: 0px auto;
+    border-top: 1px solid #3e3a39;
+    .footBottomTab{
+        width: 1200px;
+        height: auto;
+        margin: 10px auto;
+        p{
+            text-align: center;
+            line-height: 25px;
+            color: #3e3a39;
+            font-family: "Microsoft YaHei";
+        }
+    }
+    .blank20{
+        display: block;
+        width: 100%;
+        height: 40px;
+        line-height: 0px;
+        font-size: 0px;
+        clear: both;
+        overflow: hidden;
+    }
+}
+
+//固定栏
+#fixed{
+    width: 73px;
+    height: 205px;
+    border: 1px solid #b81b22;
+    border-bottom: none;
+    margin-bottom: 30px;
+    position: fixed;
+    right:10px;
+    bottom:40px;
+}

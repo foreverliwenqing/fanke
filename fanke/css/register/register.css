@@ -1,0 +1,116 @@
+body {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto; }
+  body #logo {
+    margin: 10px 0 0 0;
+    padding: 0 0 10px 0;
+    border-bottom: solid 1px #919191; }
+    body #logo img {
+      cursor: pointer; }
+
+form {
+  position: relative;
+  width: 1200px;
+  height: 592px; }
+  form .contentLeft {
+    float: left;
+    width: 465px;
+    height: 500px;
+    margin: 90px 0 0 130px; }
+  form h1 {
+    height: 35px;
+    width: 415px;
+    float: right;
+    line-height: 35px;
+    margin: 0 100px 0 0;
+    border-bottom: 2px solid #b81e20;
+    margin-top: 40px;
+    font-size: 24px;
+    color: #a2a2a2;
+    font-weight: bolder; }
+    form h1 span {
+      font-size: 14px;
+      float: right; }
+  form .contentRight {
+    float: right;
+    width: 415px;
+    height: 423px;
+    margin: 20px 100px 0 0; }
+    form .contentRight ul {
+      padding-left: 0; }
+      form .contentRight ul li {
+        margin-top: 13px;
+        list-style: none;
+        text-align: left; }
+        form .contentRight ul li span {
+          display: none;
+          width: 418px;
+          height: 18px;
+          font-size: 14px; }
+        form .contentRight ul li .identCode, form .contentRight ul li .phoneCode {
+          width: 260px;
+          height: 43px; }
+        form .contentRight ul li .phoneIdent, form .contentRight ul li .pwd, form .contentRight ul li .repwd {
+          width: 100%;
+          height: 45px; }
+        form .contentRight ul li .identImg {
+          display: block;
+          height: 48px;
+          float: right; }
+          form .contentRight ul li .identImg img {
+            width: 130px;
+            height: 48px; }
+        form .contentRight ul li .getIdent {
+          width: 127px;
+          height: 45px;
+          text-align: center;
+          line-height: 45px;
+          background: #f5f5f5;
+          color: #b52024;
+          border: solid 1px #cbcbcb;
+          display: block;
+          float: right;
+          margin: 0 0 0 10px;
+          font-weight: bolder; }
+        form .contentRight ul li .registBtn {
+          font-size: 14px;
+          color: #9d9d9d; }
+          form .contentRight ul li .registBtn a {
+            font-size: 12px;
+            color: #b52024;
+            text-decoration: none;
+            font-weight: bold; }
+        form .contentRight ul li .subBtn {
+          width: 100%;
+          height: 46px;
+          background: #eee;
+          margin-top: 20px; }
+
+#footerArea .footBottom {
+  position: absolute;
+  left: 0px;
+  bottom: -100px;
+  width: 100%;
+  height: auto;
+  margin: 0px auto;
+  border-top: 1px solid #3e3a39; }
+  #footerArea .footBottom .footBottomTab {
+    width: 1200px;
+    height: auto;
+    margin: 10px auto; }
+    #footerArea .footBottom .footBottomTab p {
+      text-align: center;
+      line-height: 25px;
+      color: #3e3a39;
+      font-family: "Microsoft YaHei"; }
+  #footerArea .footBottom .blank20 {
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 0px;
+    font-size: 0px;
+    clear: both;
+    overflow: hidden; }
+
+/*# sourceMappingURL=register.css.map */

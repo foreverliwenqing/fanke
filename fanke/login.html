@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/login/login.css" />
+	</head>
+	<body>
+		<div id='logo'>
+			<img src="imgQt/logo.jpg" alt="" />
+		</div>
+		
+		<!--登录界面1-->
+		<form action="php/login.php" method = 'get' id = 'content'>
+			<div class='contentLeft'>
+				<img src="imgQt/img1.jpg" alt="" />
+			</div>
+			<div class="contentRight">
+				<div class="login">
+					<h1>
+						凡客 Vancl 登录
+						<span>
+							没有账户免费
+							<a href="register.html">注册</a>
+						</span>
+					</h1>
+					<div class = 'form'>
+						<div class = 'ul'>
+							<li class = 'liOne active'>普通登录</li>
+							<li class = 'liTwo'>快速登陆</li>
+						</div>
+						
+						<!--普通登录-->
+						<div class="formContent">
+							<input type="text" placeholder="请输入用户名" name = 'phone' class = 'phone'/>
+							
+							<!--<p>请输入正确的手机格式</p>-->
+							<input type="password" placeholder="请输入密码" name = 'pwd' class = 'pwd'/>
+							<div class="loginBtn">
+								<span>找回密码</span>
+								<input type="submit" value = '登录'/>
+							</div>
+							<div class="toGethers">
+								<img src="imgQt/together.png" alt="" />
+								
+							</div>
+						</div>
+						
+						<!--快速登陆-->
+						<div class = 'formContent1'>
+							<div class = 'label'>
+								<input type="text" placeholder="输入手机号" class = 'inpPhone'/>	
+								<div class = 'message'>
+									获取短信验证码
+								</div>
+							</div>
+							<div class = 'loginIdent'>
+								<input type="text" placeholder="验证码" class = 'inpIdent'/>
+								<div class = 'loginIdentImg'>
+									<img src="imgQt/ident1.png" alt="" />
+								</div>
+								<p>看不清?换一张</p>
+							</div>
+							<div class="loginPhoneIdent">
+								<input type="text" placeholder="请输入手机验证码" class = 'inpPhoneIdent'/>
+								<input type="button" value = '登录' class = 'btnLogin'/>
+							</div>
+							<div class="toGethers">
+								<img src="imgQt/together.png" alt="" />
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>	
+		
+		
+		
+		
+		<!--尾部链接-->
+		<div id="footerArea" class="">
+			<div class="footBottom">
+				<div class="footBottomTab">
+					<p> Copyright 2007 - 2018 vancl.com All Rights Reserved 京ICP证100557号 京公网安备11011502002400号 出版物经营许可证新出发京批字第直110138号</p>
+					<p> 凡客诚品（北京）科技有限公司</p>
+				</div>
+			</div>
+			<span class="blank20"></span>
+		</div>
+	</body>
+
+</html>
+<script src = 'js/jquery.min.js'></script>
+<script src = 'js/login.js'></script>

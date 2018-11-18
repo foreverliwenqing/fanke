@@ -1,0 +1,267 @@
+ body{
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto; 
+    #logo{
+        margin: 10px 0 0 0;
+        padding: 0 0 10px 0;
+        border-bottom: solid 1px #919191;
+        img{
+            cursor: pointer;
+        }
+    }
+ }
+#content{
+    width:1200px;
+    height:100%;
+    .contentLeft{
+        float:left;
+        width: 465px;
+        height: 500px;
+        margin: 90px 0 0 130px;
+    }
+    .contentRight{
+        margin: 40px auto 10px;
+        width:510px;
+        height:570px;
+        float:right;
+        .login{
+            h1{
+                font-size: 22px;
+                color: #979797;
+                font-weight: bolder;
+                text-align: left;
+                height: 25px;
+                line-height: 25px;
+                float: right;
+                margin: -15px 100px 0 0;
+                width: 400px;
+                position: relative;
+                span{
+                    font-size:14px;
+                    float:right;
+                    color: #979797;
+                    a{
+                        text-decoration: none;
+                        color: #b42025;
+                        font-weight: none;
+                    }
+                }
+            }
+                        
+            //登录主体
+            .form{
+                position:relative;
+                .ul{
+                    position:absolute;
+                    top:10px;
+                    width:402px;
+                    height: 35px;
+                    padding-left:10px;
+                    li{
+                        list-style: none;
+                        width:200px;
+                        height:35px;
+                        float:left;
+                        background: red;
+                        margin-left:0;
+                        text-align: center;
+                        line-height: 35px;
+                        background: #eee;
+                        margin-top:17px;
+                        font-size:15px;
+                        cursor: pointer;
+                    }
+                    .liOne{
+                        border-right: 1px solid black;                        
+                    }
+                    .active{
+                        background: red;
+                    }
+                }
+                .formContent{
+//                  display: none;
+                    width:400px;
+                    height:410px;
+                    border:1px solid black;
+                    position: absolute;
+                    top:77px;
+                    left:10px;
+                    text-align: center;
+                    input{
+                        width:360px;
+                        height:45px;
+                        margin-top:28px;
+                    }
+//                  p{
+//                      position:absolute;
+//                      text-align: left;
+//                      margin-left:16px;
+//                      font-size:12px;
+////                      display:none;
+//                  }
+                    .loginBtn{
+                        margin:10px auto;
+                        width:360px;
+                        height:75px;
+                        input{
+                            width:360px;
+                            height:45px;
+                            background: red;
+                            color:white;
+                            font-size:18px;
+                            font-weight: bold;
+                        }
+                        span{
+                            display: block;
+                            margin-top:20px;
+                            line-height: 25px;
+                            display: inline;
+                            color: #b42025;
+                            font-size: 14px;
+                            font-weight: bolder;
+                            float: right;
+                        }
+                    }
+                    .toGethers{
+                        width:400px;
+                        height:80px;
+                        border-top:1px dashed black;
+                        margin-top:90px;
+                        img{
+                            height:80px;
+                        }
+                    }
+                }
+                .formContent1{
+                    display: none;
+                    width:402px;
+                    height:410px;
+                    border:1px solid black;
+                    position: absolute;
+                    top:77px;
+                    left:10px;
+                    text-align: center;
+                    .label{
+                        width:400px;
+                        height:45px;
+                        margin-top:15px;
+                        .inpPhone{                                                      
+                            width:250px;
+                            height:45px;
+                        }
+                        .message{
+                            width: 97px;
+                            height: 45px;
+                            font-size:12px;
+                            text-align: center;
+                            line-height: 45px;
+                            background: #f5f5f5;
+                            color: #b52024!important;
+                            border: solid 1px #cbcbcb;
+                            display: block;
+                            float: right;
+                            margin: 0 10px 0 10px;
+                            font-weight: bolder;
+                        }
+                    }
+                    .loginIdent{
+                        height: 45px;
+                        width: 260px;
+                        border: solid 1px #cbcbcb;
+                        position: relative;
+                        margin:20px 14px;  
+                        .inpIdent{
+                            width:124px;
+                            height:43px;
+                            float:left;
+                            border:0;
+                            border-right:1px solid beige;
+                            border-bottom:1px solid #eee;
+                        }
+                        .loginIdentImg{
+                            img{
+                                float: left;
+                                height:45px;
+                                width: 124px;
+                            }
+                        }
+                        p{
+                            position: absolute;
+                            right:-117px;
+                            top:-15px;
+                            width:108px;
+                            height:18px;
+                            float:right;
+                            font-size:14px;
+                        }
+                    }
+                    
+                    .loginPhoneIdent{
+                        .inpPhoneIdent{                            
+                            width:360px;
+                            height:45px;
+                            margin-left:-10px;
+                        }
+                        .btnLogin{
+                            width:364px;
+                            height:47px;
+                            border:none;
+                            margin-left:-10px;
+                            background: red;
+                            font-size: 18px;
+                            color: white;
+                            font-weight: bold;
+                            text-align: center;
+                            line-height: 45px;
+                            margin-top:25px;
+                        }
+                    }
+                    .toGethers{
+                        width:400px;
+                        height:80px;
+                        border-top:1px dashed black;
+                        margin-top:50px;
+                        img{
+                            height:80px;
+                        }
+                    }
+                }
+               
+            }
+        }
+    }
+}
+
+
+
+//尾部连接
+#footerArea .footBottom{
+    position: absolute;
+    left:0px;
+    bottom:-100px;
+    width: 100%;
+    height: auto;
+    margin: 0px auto;
+    border-top: 1px solid #3e3a39;
+    .footBottomTab{
+        width: 1200px;
+        height: auto;
+        margin: 10px auto;
+        p{
+            text-align: center;
+            line-height: 25px;
+            color: #3e3a39;
+            font-family: "Microsoft YaHei";
+        }
+    }
+    .blank20{
+        display: block;
+        width: 100%;
+        height: 40px;
+        line-height: 0px;
+        font-size: 0px;
+        clear: both;
+        overflow: hidden;
+    }
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>注册页面</title>
+		<link rel="stylesheet" href="css/register/register.css" />
+	</head>
+
+	<body>
+		<div id='logo'>
+			<img src="imgQt/logo.jpg" alt="" />
+		</div>
+		<form action="php/register.php" method = 'get' class = 'form'>
+			<div class='contentLeft'>
+				<img src="imgQt/img1.jpg" alt="" />
+			</div>
+			<h1>
+				注册新用户 
+				<span>
+					我已经注册，现在就
+					<a href="login.html">登录</a>
+				</span>
+			</h1>
+			<div class="contentRight">
+				
+				<div class="email">
+					<ul>
+						<li>
+							<input type="text" placeholder='手机号' class='phoneCode input' name="uphone" />
+							<a href="" class='getIdent'>获取短信验证码</a>
+							<span class = 'span1'>请填写正确的手机号并进行验证</span>
+						</li>
+						
+						<li>
+							<input type="text" placeholder='设定登录密码' class='pwd input' name = 'upwd'/>
+							<span class = 'span1'>6-16位字符，可以使用字母、数字或符号的组合</span>
+								
+						</li>
+						
+						<li>
+							<input type="text" placeholder='再次输入密码' class='repwd input' />
+							<span class = 'span1'>请再次输入登录密码，两次输入必须一致</span>
+						</li>
+						<li>
+							<div class='registBtn'>
+								<input type="checkbox" />
+								<label for="">
+									 请阅读
+									<a href="http://help.vancl.com/Category/69-1.html">《VANCL凡客诚品服务条款》</a>
+								</label>
+							</div>
+							<input type="submit" class='subBtn' value='立即注册' />
+						</li>
+					</ul>
+
+		</form>
+			
+		<!--尾部链接-->
+		<div id="footerArea" class="">
+			<div class="footBottom">
+				<div class="footBottomTab">
+					<p> Copyright 2007 - 2018 vancl.com All Rights Reserved 京ICP证100557号 京公网安备11011502002400号 出版物经营许可证新出发京批字第直110138号</p>
+					<p> 凡客诚品（北京）科技有限公司</p>
+				</div>
+			</div>
+			<span class="blank20"></span>
+		</div>
+	</body>
+
+</html>
+<script type="text/javascript">
+	
+	var spanAll = document.querySelectorAll('.span1');
+	
+	var liAll = document.querySelector('ul').children;
+	
+	var inpAll = document.querySelectorAll('.input');
+	
+	
+	var falg = true;
+	
+	console.log(inpAll.length);
+	for(var i = 0; i < inpAll.length; i++){	
+		
+		
+		inpAll[i].index = i;
+		
+		
+		inpAll[i].onfocus = function(){	
+			
+		
+			var index = this.index;
+		//显示隐藏提示框			
+			for(var j = 0; j < spanAll.length; j++){
+				
+				spanAll[j].style.display = 'none';
+				
+			}
+			spanAll[index].style.display = 'block';
+			
+		//失去焦点去正则判断	
+			inpAll[index].onblur = function(){
+				
+				console.log(index);
+				var pwdCode1 = inpAll[1].value;
+				
+				var inpVal = inpAll[index].value;
+				
+				//表单验证
+				if(index == 0){
+					
+					var regPhoneCode = /^[1][35789]\d{9}/;
+					var phoneCode = inpVal;
+					if(regPhoneCode.test(phoneCode)){
+						spanAll[index].style.display = 'none';
+					}else{
+						falg = false;
+					}
+				}else if(index == 1){
+					
+					console.log(spanAll[index]);
+					var regPwd = /[\da-zA-Z!@#$%^&*]{6,16}/;
+					var pwdCode = inpVal;
+					console.log(pwdCode);
+					if(regPwd.test(pwdCode)){
+
+						spanAll[index].style.display = 'none';																
+					}else{
+						falg = false;
+					}
+					
+				}else if(index == 2){
+					
+					var repwdCode = inpVal;
+					
+					if(repwdCode == pwdCode1){
+						spanAll[index].style.display = 'none';
+					}else{
+						falg = false;
+					}
+					
+				}
+			}
+			
+			
+		}
+	}
+	
+	var submit = document.querySelector('.form');
+	
+	console.log(falg);
+	submit.onsubmit = function(){
+		
+		if(falg == false){
+			alert('注册用户不符合标准');
+			console.log('false');
+			return false;
+		}
+		return true;
+	}
+	
+	
+</script>
